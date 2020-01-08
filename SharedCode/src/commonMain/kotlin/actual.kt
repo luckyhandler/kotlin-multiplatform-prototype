@@ -1,4 +1,4 @@
-package com.jetbrains.handson.mpp.mobile
+package de.handler.mpp.mobile
 
 expect fun platformName(): String
 
