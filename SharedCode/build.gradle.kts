@@ -112,6 +112,10 @@ dependencies {
     implementation("io.ktor:ktor-client-json-jvm:1.3.0-rc2")
     implementation("io.ktor:ktor-client-logging-jvm:1.3.0-rc2")
     implementation("io.ktor:ktor-client-serialization-jvm:1.3.0-rc2")
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
 }
 
 // Used for the xCode integration
