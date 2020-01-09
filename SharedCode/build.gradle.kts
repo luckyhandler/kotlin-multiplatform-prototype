@@ -24,6 +24,7 @@ kotlin {
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+        implementation("io.ktor:ktor-client-core:1.3.0-rc2")
     }
 
     sourceSets["androidMain"].dependencies {
