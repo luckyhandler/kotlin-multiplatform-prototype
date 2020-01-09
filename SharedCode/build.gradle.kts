@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    id("kotlinx-serialization")
 }
 
 kotlin {
@@ -23,18 +24,54 @@ kotlin {
     jvm("android")
 
     sourceSets["commonMain"].dependencies {
+        // Kotlin
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+
+        // Coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.3.3")
+
+        // Ktor
         implementation("io.ktor:ktor-client-core:1.3.0-rc2")
+        implementation("io.ktor:ktor-client-json:1.3.0-rc2")
+        implementation("io.ktor:ktor-client-logging:1.3.0-rc2")
+        implementation("io.ktor:ktor-client-serialization:1.3.0-rc2")
+
+        // Serialization
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.14.0")
     }
 
     sourceSets["androidMain"].dependencies {
+        // Kotlin
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+
+        // Coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3")
+
+        // Serialization
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
+
+        // Ktor
+        implementation ("io.ktor:ktor-client-android:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-core-jvm:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-json-jvm:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-logging-jvm:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-serialization-jvm:1.3.0-rc2")
     }
 
     sourceSets["iosMain"].dependencies {
+        // Coroutines
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3")
+
+        // Serialization
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.14")
+
+        // Ktor
+        implementation ("io.ktor:ktor-client-ios:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-core-native:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-json-native:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-logging-native:1.3.0-rc2")
+        implementation ("io.ktor:ktor-client-serialization-native:1.3.0-rc2")
     }
 }
 
@@ -58,10 +95,12 @@ val packForXcode by tasks.creating(Sync::class) {
     /// generate a helpful ./gradlew wrapper with embedded Java path
     doLast {
         val gradlew = File(targetDir, "gradlew")
-        gradlew.writeText("#!/bin/bash\n"
-                + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
-                + "cd '${rootProject.rootDir}'\n"
-                + "./gradlew \$@\n")
+        gradlew.writeText(
+            "#!/bin/bash\n"
+                    + "export 'JAVA_HOME=${System.getProperty("java.home")}'\n"
+                    + "cd '${rootProject.rootDir}'\n"
+                    + "./gradlew \$@\n"
+        )
         gradlew.setExecutable(true)
     }
 }
