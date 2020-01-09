@@ -1,5 +1,3 @@
-package de.handler.mpp.mobile
-
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineScope

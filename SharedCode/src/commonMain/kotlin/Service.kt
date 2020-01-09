@@ -1,5 +1,3 @@
-package de.handler.mpp.mobile
-
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer

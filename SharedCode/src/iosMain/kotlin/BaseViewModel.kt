@@ -1,5 +1,3 @@
-package de.handler.mpp.mobile
-
 import kotlinx.coroutines.*
 import platform.darwin.dispatch_async
 import platform.darwin.dispatch_get_main_queue
@@ -7,7 +5,7 @@ import kotlin.coroutines.CoroutineContext
 
 actual open class BaseViewModel actual constructor() {
     private val viewModelJob = SupervisorJob()
-    val viewModelScope: CoroutineScope = CoroutineScope(IosMainDispatcher + viewModelJob)
+    private val viewModelScope: CoroutineScope = CoroutineScope(IosMainDispatcher + viewModelJob)
 
     actual val clientScope: CoroutineScope = viewModelScope
 

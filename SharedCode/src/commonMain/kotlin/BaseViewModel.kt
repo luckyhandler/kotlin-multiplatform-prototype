@@ -1,5 +1,3 @@
-package de.handler.mpp.mobile
-
 import kotlinx.coroutines.CoroutineScope
 
 expect open class BaseViewModel() {
