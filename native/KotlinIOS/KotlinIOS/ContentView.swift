@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import SharedCode
 
 struct ContentView: View {
+    let message = CommonKt.createApplicationScreenMessage()
     var body: some View {
-        Text("Hello, World!")
+        Text(message)
     }
 }
 
