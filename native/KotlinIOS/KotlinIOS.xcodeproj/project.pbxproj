@@ -17,6 +17,7 @@
 		DB41D44323C622B600F7E1D6 /* KotlinIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB41D44223C622B600F7E1D6 /* KotlinIOSUITests.swift */; };
 		DB41D45C23C7307100F7E1D6 /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB41D45123C7230900F7E1D6 /* SharedCode.framework */; };
 		DB41D45D23C7307100F7E1D6 /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DB41D45123C7230900F7E1D6 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DB41D46223C89C5200F7E1D6 /* AstronautsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB41D46123C89C5200F7E1D6 /* AstronautsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		DB41D44223C622B600F7E1D6 /* KotlinIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinIOSUITests.swift; sourceTree = "<group>"; };
 		DB41D44423C622B600F7E1D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB41D45123C7230900F7E1D6 /* SharedCode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SharedCode.framework; path = "../../SharedCode/build/xcode-frameworks/SharedCode.framework"; sourceTree = "<group>"; };
+		DB41D46123C89C5200F7E1D6 /* AstronautsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				DB41D42B23C622B600F7E1D6 /* LaunchScreen.storyboard */,
 				DB41D42E23C622B600F7E1D6 /* Info.plist */,
 				DB41D42823C622B600F7E1D6 /* Preview Content */,
+				DB41D46123C89C5200F7E1D6 /* AstronautsViewModel.swift */,
 			);
 			path = KotlinIOS;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB41D46223C89C5200F7E1D6 /* AstronautsViewModel.swift in Sources */,
 				DB41D42123C622B400F7E1D6 /* AppDelegate.swift in Sources */,
 				DB41D42323C622B400F7E1D6 /* SceneDelegate.swift in Sources */,
 				DB41D42523C622B400F7E1D6 /* ContentView.swift in Sources */,

@@ -4,10 +4,17 @@ plugins {
     id("org.jetbrains.kotlin.multiplatform")
     id("kotlinx-serialization")
     id("com.android.library")
+    //id("org.jetbrains.kotlin.native.cocoapods")
 }
 
 kotlin {
-    ios()
+    ios {
+        compilations {
+            val main by getting {
+                kotlinOptions.freeCompilerArgs = listOf("-Xobjc-generics")
+            }
+        }
+    }
     android()
 
     //select iOS target platform depending on the Xcode environment variables

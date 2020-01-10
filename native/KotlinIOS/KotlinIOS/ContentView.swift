@@ -6,13 +6,33 @@
 //  Copyright © 2020 Nino Handler. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 import SharedCode
 
+
 struct ContentView: View {
-    let message = CommonKt.createApplicationScreenMessage()
+    @ObservedObject var viewModel = AstronautsViewModel.init()
     var body: some View {
-        Text(message)
+        NavigationView {
+            List(viewModel.astronauts, id: \.name) { astronaut in
+                PersonView(astronaut: astronaut)
+            }
+            .navigationBarTitle(Text("Astronauts on ISS"), displayMode: .large)
+        }
+    }
+}
+
+struct PersonView : View {
+    var astronaut: Astronaut
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(astronaut.name).font(.headline)
+                Text(astronaut.craft).font(.subheadline)
+            }
+        }
     }
 }
 
