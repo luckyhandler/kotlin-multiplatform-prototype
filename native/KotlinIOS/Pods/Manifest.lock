@@ -1,0 +1,16 @@
+PODS:
+  - SharedCode (1.0.0)
+
+DEPENDENCIES:
+  - SharedCode (from `../../SharedCode/SharedCode.podspec`)
+
+EXTERNAL SOURCES:
+  SharedCode:
+    :path: "../../SharedCode/SharedCode.podspec"
+
+SPEC CHECKSUMS:
+  SharedCode: 46cf92aaa8d207ee0d01989ad688833090258b95
+
+PODFILE CHECKSUM: fe4171b4ad06686c263276641e5f9e4858d427e3
+
+COCOAPODS: 1.8.4

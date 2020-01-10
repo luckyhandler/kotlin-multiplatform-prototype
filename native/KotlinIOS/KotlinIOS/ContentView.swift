@@ -10,7 +10,6 @@ import Combine
 import SwiftUI
 import SharedCode
 
-
 struct ContentView: View {
     @ObservedObject var viewModel = AstronautsViewModel.init()
     var body: some View {
