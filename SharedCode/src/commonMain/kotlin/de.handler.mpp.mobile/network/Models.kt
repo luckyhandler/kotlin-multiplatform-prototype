@@ -1,4 +1,4 @@
-package network
+package de.handler.mpp.mobile.network
 
 import kotlinx.serialization.Serializable
 

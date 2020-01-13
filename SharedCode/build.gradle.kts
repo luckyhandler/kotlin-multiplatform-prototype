@@ -3,6 +3,7 @@ plugins {
     id("kotlinx-serialization")
     id("com.android.library")
     id("org.jetbrains.kotlin.native.cocoapods")
+    id("com.squareup.sqldelight")
 }
 
 version = "1.0.0"
@@ -32,14 +33,20 @@ kotlin {
 
         // Serialization
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:0.14.0")
+
+        // Database
+        implementation("com.squareup.sqldelight:sqlite-driver:1.2.1")
     }
 
     sourceSets["iosMain"].dependencies {
+        // Kotlin
+        implementation ("org.jetbrains.kotlin:kotlin-stdlib-common")
+
         // Coroutines
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:1.3.3")
 
         // Serialization
-        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.14")
+        //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.14.0")
 
         // Ktor
         implementation("io.ktor:ktor-client-ios:1.3.0-rc2")
@@ -47,6 +54,9 @@ kotlin {
         implementation("io.ktor:ktor-client-json-native:1.3.0-rc2")
         implementation("io.ktor:ktor-client-logging-native:1.3.0-rc2")
         implementation("io.ktor:ktor-client-serialization-native:1.3.0-rc2")
+
+        // Database
+        implementation("com.squareup.sqldelight:ios-driver:1.2.1")
     }
 }
 
@@ -87,6 +97,12 @@ android {
     }
 }
 
+sqldelight {
+    database("AstronautDatabase") {
+        packageName = "de.handler.mpp.mobile.data"
+    }
+}
+
 dependencies {
     // Kotlin
     kotlin("stdlib")
@@ -96,7 +112,7 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3")
 
     // Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.14.0")
+    //implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:0.14.0")
 
     // Ktor
     implementation("io.ktor:ktor-client-android:1.3.0-rc2")
@@ -105,7 +121,7 @@ dependencies {
     implementation("io.ktor:ktor-client-logging-jvm:1.3.0-rc2")
     implementation("io.ktor:ktor-client-serialization-jvm:1.3.0-rc2")
 
-    // ViewModel
-    implementation("androidx.lifecycle:lifecycle-extensions:2.1.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.1.0")
+    // Database
+    implementation("com.squareup.sqldelight:android-driver:1.2.1")
+    implementation("com.squareup.sqldelight:coroutines-extensions-jvm:1.2.1")
 }

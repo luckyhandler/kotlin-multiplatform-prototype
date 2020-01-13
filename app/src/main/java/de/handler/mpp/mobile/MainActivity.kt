@@ -3,7 +3,7 @@ package de.handler.mpp.mobile
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import data.Repository
+import de.handler.mpp.mobile.data.Repository
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 

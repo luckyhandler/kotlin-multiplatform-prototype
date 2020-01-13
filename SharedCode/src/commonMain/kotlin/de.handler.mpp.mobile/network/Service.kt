@@ -1,4 +1,4 @@
-package network
+package de.handler.mpp.mobile.network
 
 import io.ktor.client.HttpClient
 import io.ktor.client.features.json.JsonFeature
