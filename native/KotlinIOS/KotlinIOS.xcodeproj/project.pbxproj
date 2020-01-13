@@ -16,6 +16,7 @@
 		DB41D49C23C8BE3300F7E1D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB41D49A23C8BE3300F7E1D6 /* LaunchScreen.storyboard */; };
 		DB41D4A423C8BE5800F7E1D6 /* Podfile in Sources */ = {isa = PBXBuildFile; fileRef = DB41D4A323C8BE5800F7E1D6 /* Podfile */; };
 		DB41D4A623C8C0D300F7E1D6 /* AstronautsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB41D4A523C8C0D300F7E1D6 /* AstronautsViewModel.swift */; };
+		DB6A662223CCA5B80053305B /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DB6A662023CCA5B80053305B /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		DB41D49D23C8BE3300F7E1D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB41D4A323C8BE5800F7E1D6 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		DB41D4A523C8C0D300F7E1D6 /* AstronautsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AstronautsViewModel.swift; sourceTree = "<group>"; };
+		DB6A662023CCA5B80053305B /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		DB6A662123CCA5B80053305B /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB6A662223CCA5B80053305B /* libsqlite3.tbd in Frameworks */,
 				6792F1EBA2DCBB7A391B3F2D /* Pods_KotlinIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +53,8 @@
 		3D07D806272A010550EAD46C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB6A662123CCA5B80053305B /* libsqlite3.0.tbd */,
+				DB6A662023CCA5B80053305B /* libsqlite3.tbd */,
 				79434E98450A28C5D4DD4CF9 /* Pods_KotlinIOS.framework */,
 			);
 			name = Frameworks;
