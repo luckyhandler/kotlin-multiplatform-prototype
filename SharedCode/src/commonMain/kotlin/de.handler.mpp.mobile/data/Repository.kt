@@ -16,7 +16,7 @@ class Repository {
     private val db = createDatabase()
     private val astronautQueries = db?.astronautModelQueries
 
-    suspend fun fetchPeople(forceNetwork: Boolean = false): List<Astronaut> {
+    private suspend fun fetchPeople(forceNetwork: Boolean = false): List<Astronaut> {
         val localAstronauts = astronautQueries?.selectAll { _, craft, name -> Astronaut(craft, name) }?.executeAsList()
 
         return if (localAstronauts.isNullOrEmpty() || forceNetwork) {
@@ -30,7 +30,6 @@ class Repository {
         }
     }
 
-    // For iOS
     fun fetchPeople(success: (List<Astronaut>) -> Unit) {
         MainScope().launch(dispatcher()) {
             success(fetchPeople())
